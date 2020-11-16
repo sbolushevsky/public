@@ -5,8 +5,7 @@ import subprocess
 def main():
     """Generates a list of labels to print from the list of full IND#s """
 
-    df = pd.read_excel(
-        r"\\Som001.som.ucsf.edu\IND$\Shared\Prusiner\DrugDiscovery\Medicinal Chemistry\cmpds manage\cmpds management@UCSF_ver3.3.xlsx")
+    df = pd.read_excel(NONE)
 
     IND_list = []
 

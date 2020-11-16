@@ -10,7 +10,7 @@ class Auth:
     def __init__(self):
         list_1 = ["DSI Barcode", "MW", "Liquid Stock Box Name", "Liquid Stock Location", "Chemist Name", "Assay Date"]
         data1 = pd.read_excel(
-            r"Chemical inventory\Chemistry Stuff\Liquid Stock and Outsourced Cmpds\Final Compound Liquid Stock SYN.xlsx",
+            r"Chemical inventory\SYN.xlsx",
             sheet_name="Sheet2", usecols=list_1, dtype=object)
 
         self.data1_copy = data1.copy()[list_1].rename(
@@ -19,7 +19,7 @@ class Auth:
                      "Chemist Name": "Chemist"})
 
         data2 = pd.read_excel(
-            r"Chemical inventory\Chemistry Stuff\Liquid Stock and Outsourced Cmpds\Final Compound Liquid Stock TAU.xlsx",
+            r"Chemical inventory\TAU.xlsx",
             sheet_name="Sheet1", usecol=list_1, dtype=object)
         self.data2_copy = data2.copy()[list_1].rename(
             columns={"DSI Barcode": "DSI-#", "Liquid Stock Box Name": "LS Box",
@@ -28,23 +28,23 @@ class Auth:
 
         list_2 = ["DSI-#", "Location"]
         data3 = pd.read_excel(
-            r"Chemical inventory\Chemistry Stuff\Liquid Stock and Outsourced Cmpds\Final Compound Liquid Stock SYN.xlsx",
+            r"ChemicalSYN.xlsx",
             sheet_name="Final Compound Storage Location", usecols=list_2, dtype=object)
 
         self.data3_copy = data3.copy().rename(columns={"Location": "SS Location"})
 
         data4 = pd.read_excel(
-            r"Chemical inventory\Chemistry Stuff\Liquid Stock and Outsourced Cmpds\Final Compound Liquid Stock TAU.xlsx",
+            r"ChemicalTU.xlsx",
             sheet_name="Final Compound Storage Location", usecols=list_2, dtype=object)
         self.data4_copy = data4.copy().rename(columns={"Location": "SS Location"})
 
         data5 = pd.read_excel(
-            r"Chemical inventory\Chemistry Stuff\Liquid Stock and Outsourced Cmpds\Final Compound Liquid Stock SYN.xlsx",
+            r"Chemical SYN.xlsx",
             sheet_name="Biolab Syn Locations", usecols=["DSI-#", "Location", "Comment_1", "Comment_2"], dtype=object)
         self.data5_copy = data5.copy().rename(columns={"Location": "IND Location"})
 
         data6 = pd.read_excel(
-            r"Chemical inventory\Chemistry Stuff\Liquid Stock and Outsourced Cmpds\Final Compound Liquid Stock TAU.xlsx",
+            r"Chemical inventoryTAU.xlsx",
             sheet_name="Biolab tau locations", usecols=["DSI-#", "Location", "Comment"], dtype=object)
         self.data6_copy = data6.copy().rename(columns={"Location": "IND Location"})
 
@@ -110,7 +110,7 @@ class SearchResults:
 def main():
     """  """
 
-    new_networked_directory = r'\\Som001.som.ucsf.edu\IND$\Shared\Prusiner\DrugDiscovery'
+    new_networked_directory = r'NONE'
     os.chdir(new_networked_directory)
     data = Auth()
 

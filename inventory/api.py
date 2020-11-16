@@ -1,5 +1,3 @@
-### CDD API access and update
-# https://app.collaborativedrug.com/vaults/3370/protocols/52414
 
 import requests
 import pandas as pd
@@ -9,9 +7,9 @@ import json
 
 
 def main():
-    base_url = "https://app.collaborativedrug.com/api/v1/vaults/3370/"
-    api_key_wr = "MTI2M3xsUUJxbkJ5ZFVLaE1ST2p3WXliN09mSnZxeGVyMGg5ZjRmb20veXdVRTB5M2lsUVFaQT09"
-    headers = {'X-CDD-token': api_key_wr}
+    base_url = "NONE"
+    api_key_wr = "NONE"
+    headers = {'token': api_key_wr}
 
     now = datetime.now()
     current_date = now.strftime("%Y-%m-%d")
@@ -49,7 +47,7 @@ def main():
                 batch_id.append(batch_tuple[1])
 
         if len(batch_id) == 0:
-            print(f"{ind_number}: batch {batch_number} doesn't exist on CDD")
+            print(f"{ind_number}: batch {batch_number} doesn't exist on ...")
 
         url = base_url + "protocols/52414/data"
         params_api = {'molecules': ind_id}
@@ -79,15 +77,15 @@ def main():
         new_data.setdefault('amount remaining').append(amount_remaining_2)
         new_data.setdefault('location').append(location)
 
-    file_path = "C:\\Users\\sbolushevsky\\Documents\\inventory\\API\\" + file_name_date + "_compound_manage_upload.csv"
+    file_path = "C:\\Users\\sbolushevsky\\Documents\\inventory\\API\\" + file_name_date + "upload.csv"
     data = pd.DataFrame.from_dict(new_data)
     data.rename(columns={'Compound Name2': 'Compound Name'}, inplace=True)
 
     print(data)
     data.to_csv(file_path, index=False)
 
-    url_upd = 'https://app.collaborativedrug.com/api/v1/vaults/3370/slurps'
-    headers_upd = {"X-CDD-Token": api_key_wr}
+    url_upd = 'NONE'
+    headers_upd = {"Token": api_key_wr}
 
     data = {'mapping_template': 15461, 'project': 11667, 'runs': {'run_date': str(current_date)}}
     files = {'file': open(file_path, 'rb')}
@@ -101,7 +99,7 @@ def main():
         if state.json().get('state') != "committed":
             continue
         else:
-            print(f"\nDone. Check API Protocol on CDD")
+            print(f"\nDone")
             break
 
 

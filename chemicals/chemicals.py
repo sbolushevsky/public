@@ -33,9 +33,9 @@ def upload():
             else:
                 return False
 
-    username = "sergei.bolushevsky@ucsf.edu"
+    username = "NONE"
     # password=getpass("Enter your password: ")
-    password = "Ss7604091!1982"
+    password = "NONE"
 
     chrome_options = Options()
     chrome_options.add_argument('--disable-notifications')

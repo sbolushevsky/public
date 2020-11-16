@@ -3,7 +3,7 @@ import pandas as pd
 
 
 def return_list():
-    link = r"c:\Users\sbolushevsky\Documents\cmpds\locations_syn.csv"
+    link = r"c:\Users\sbolushevsky\Documents"
     b = pd.read_csv(link, names=['DSI#', 'Location', 'Stock', 'Comment', 'SS Location'])
     a = b["DSI#"].str.extract(r"(IND-[0-9]{7})(.{6})")
 
@@ -71,10 +71,10 @@ class Cdd(Upd):
 class Auth:
 
     def __init__(self):
-        self.base_url = "https://app.collaborativedrug.com/api/v1/vaults/3370/"
-        api_key_wr = "MTI2M3xsUUJxbkJ5ZFVLaE1ST2p3WXliN09mSnZxeGVyMGg5ZjRmb20veXdVRTB5M2lsUVFaQT09"
-        api_key_r = "MTI1N3xqOGhMMnpnUnpwelVNTUxFYUlVTzlKQU83ZS9PSnFVdmdTQ2FRVkI0VTRFakc3UUxsdz09"
-        self.headers = {'X-CDD-token': api_key_wr}
+        self.base_url = "NONE"
+        api_key_wr = "NONE"
+        api_key_r = "NONE"
+        self.headers = {'token': api_key_wr}
 
 
 def main():
@@ -93,7 +93,7 @@ def main():
         try:
             Cdd(i).data
         except IndexError:
-            print(f'\nCompound {ind} is not on CDD\n')
+            print(f'\nCompound {ind} is not on...\n')
             continue
 
         batch_id = Cdd(i).show_batches(ind_batch_number)

@@ -58,9 +58,7 @@ def main():
         return print("No email sent")
     else:
 
-        clist = 'Conrad, Jay <Jay.Conrad@ucsf.edu>; Gomes, Mellanie <Mellanie.Gomes@ucsf.edu>; Raikar, ' \
-                'Sandeep <Sandeep.Raikar@ucsf.edu>; Ramirez, Cristian <Cristian.Ramirez@ucsf.edu>; Sin, ' \
-                'Ny <Ny.Sin@ucsf.edu>; Viart, Helene <Helene.Viart@ucsf.edu>; West, John W <John.West@ucsf.edu> '
+        clist = 'NONE'
 
         outlook = client.Dispatch("Outlook.Application")
         message = outlook.CreateItem(0)

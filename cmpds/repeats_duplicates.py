@@ -9,9 +9,9 @@ def main():
     """The file needs to be renamed to
     "M83.xlsx" """
 
-    base_url = "https://app.collaborativedrug.com/api/v1/vaults/3370/"
-    api_key_r = "MTI1N3xqOGhMMnpnUnpwelVNTUxFYUlVTzlKQU83ZS9PSnFVdmdTQ2FRVkI0VTRFakc3UUxsdz09"
-    headers = {'X-CDD-token': api_key_r}
+    base_url = "NONE"
+    api_key_r = "NONE"
+    headers = {'token': api_key_r}
     url = base_url + "molecules"
 
     df = pd.read_excel("M83.xlsx")

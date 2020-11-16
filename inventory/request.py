@@ -3,11 +3,11 @@ import re
 
 
 def cdd_request():
-    base_url = "https://app.collaborativedrug.com/api/v1/vaults/3370/"
-    api_key_wr = "MTI2M3xsUUJxbkJ5ZFVLaE1ST2p3WXliN09mSnZxeGVyMGg5ZjRmb20veXdVRTB5M2lsUVFaQT09"
-    api_key_r = "MTI1N3xqOGhMMnpnUnpwelVNTUxFYUlVTzlKQU83ZS9PSnFVdmdTQ2FRVkI0VTRFakc3UUxsdz09"
+    base_url = "None"
+    api_key_wr = "None"
+    api_key_r = "None"
 
-    headers = {'X-CDD-token': api_key_r}
+    headers = {'token': api_key_r}
     url = base_url + "molecules"
 
     ind = input("\nPut in IND: ").strip().upper()

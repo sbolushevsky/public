@@ -6,7 +6,7 @@ def main():
     """Generates a list of labels to print from an assay file. The file needs to be renamed to
     "M83.xlsx" """
 
-    df = pd.read_excel(r"\\Som001.som.ucsf.edu\IND$\Shared\Prusiner\DrugDiscovery\Medicinal Chemistry\cmpds manage\cmpds management@UCSF_ver3.3.xlsx")
+    df = pd.read_excel(NONE)
     df2 = pd.read_excel("M83.xlsx")
 
     df2 = df2[df2["Note"].str.strip() == "novel"]
